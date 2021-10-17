@@ -4,9 +4,9 @@
  */
 
 const symbols = [
-  ':', ';', ',', '(', ')', '[', ']',
+  ':', ';', ',', '.', '(', ')', '[', ']',
   '{', '}', 'π', '±', '+', '-', '*',
-  '/', '%', '"', "'", '`', '@',
+  '/', '%', '"', "'", '`', '@', '^',
 ];
 
 const is = {
@@ -99,7 +99,7 @@ function readWord(iter) {
   while (!iter.end()) {
     let { curr, next } = iter.get();
     temp += curr;
-    let isBreak = is.symbol(next) || is.space(next) || is.digit(next);
+    let isBreak = is.symbol(next) || is.space(next);
     if (temp.length && isBreak) {
       if (!is.closedTag(curr, next)) break;
     }

@@ -142,7 +142,8 @@ test('numbers', t => {
 
   compare(t, '0..5', [
     { type: 'Number', value: '0' },
-    { type: 'Word', value: '..' },
+    { type: 'Symbol', value: '.' },
+    { type: 'Symbol', value: '.' },
     { type: 'Number', value: '5' },
   ]);
 
